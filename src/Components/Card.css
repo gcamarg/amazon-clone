@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  justify-content: flex-end;
+  width: calc(25%-20px);
+  margin: 10px;
+  height: 385px;
+  /* min-width: 280px;
+  max-width: 380px; */
+  padding: 20px 0 15px 0;
+  z-index: 1;
+}
+.card__title {
+  padding: 0 20px;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+}
+.card__body {
+  display: block;
+  padding: 0 20px;
+}
+.card__row1 {
+  display: flex;
+  justify-content: space-between;
+}
+.card__row1 > img {
+  display: inline-block;
+  max-height: 115px;
+  width: 47%;
+  object-fit: contain;
+}
+
+.card__footer > a {
+  text-decoration: none;
+}
+.card__footer > a:hover {
+  text-decoration: underline;
+  color: rgb(223, 79, 79);
+}

@@ -1,0 +1,78 @@
+.header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #131921;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__logo {
+  width: 145px;
+  object-fit: contain;
+  margin: 10px 10px 0px 10px;
+}
+.header__search {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 24px;
+}
+.header__dropDownList {
+  height: 40px;
+  margin: 0;
+  width: fit-content;
+  border-radius: 3px 0px 0px 3px;
+  background-color: rgb(243, 243, 243);
+}
+.header__searchInput {
+  height: 21px;
+  padding: 7px 10px 10px 0;
+  border: none;
+  width: 100%;
+}
+.header__searchIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 40px;
+  background-color: rgb(254, 189, 105);
+  border-radius: 0 3px 3px 0;
+}
+.header__locationBox {
+  display: flex;
+  align-items: flex-end;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+.header__option {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.header__optionLineOne {
+  font-size: 12px;
+}
+.header__optionLineTwo {
+  font-size: 13px;
+  font-weight: 700;
+}
+.header__cartSVG {
+  fill: #fff;
+}
+.header__locationTextBox {
+  margin-left: 0;
+}
+
+.nav__bar {
+  background-color: rgb(35, 47, 62);
+  height: 39px;
+  width: 100%;
+  z-index: 100;
+}
