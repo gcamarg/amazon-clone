@@ -7,9 +7,7 @@ function Subtotal({ subtotal, nItems }) {
     <div className="subtotal">
       <p>
         Subtotal ({nItems} itens):
-        <strong>
-          <PriceFormater price={subtotal}></PriceFormater>
-        </strong>
+        <PriceFormater price={subtotal}></PriceFormater>
       </p>
       <small className="subtotal__gift">
         <input type="checkbox" /> Esse pedido contém um presente

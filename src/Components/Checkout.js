@@ -29,6 +29,7 @@ function Checkout() {
                 price={product.price}
                 image={product.image}
                 quantity={product.quantity}
+                key={product.id}
               />
             );
           })}

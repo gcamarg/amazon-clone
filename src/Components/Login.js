@@ -1,16 +1,36 @@
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
 import "./Login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const logIn = (e) => {
     e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        if (userCredential) {
+          navigate("/", { state: userCredential });
+        }
+      })
+      .catch((error) => alert(error.message));
   };
   const register = (e) => {
     e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        if (userCredential) {
+          navigate("/");
+        }
+      })
+      .catch((error) => alert(error.message));
   };
   return (
     <div className="login">
@@ -24,14 +44,14 @@ function Login() {
         <div className="login__block">
           <h1 className="login__title">Fazer Login</h1>
           <form action="" className="login__form">
-            <label for="user-email">E-mail</label>
+            <label htmlFor="user-email">E-mail</label>
             <input
               type="text"
               id="user-email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <label for="user-password">Password</label>
+            <label htmlFor="user-password">Password</label>
             <input
               type="password"
               id="user-password"

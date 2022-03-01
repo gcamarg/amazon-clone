@@ -37,6 +37,7 @@ function CartItem({ id, title, image, price, quantity }) {
           <select
             name="Quantity"
             id=""
+            defaultValue={quantity}
             onChange={(t) => {
               t.target.selectedIndex === 0
                 ? removeFromCart()
@@ -48,7 +49,8 @@ function CartItem({ id, title, image, price, quantity }) {
               .map((_, idx) => {
                 return (
                   <option
-                    selected={idx === quantity ? true : false}
+                    key={`qty__${idx}`}
+                    // selected={idx === quantity ? true : false}
                     value={idx}
                   >{`Qtd: ${idx}`}</option>
                 );
@@ -58,9 +60,7 @@ function CartItem({ id, title, image, price, quantity }) {
           <span>Salvar para mais tarde</span>
         </div>
       </div>
-      <div className="cartItem__price">
-        <strong>{<PriceFormater price={price} />}</strong>
-      </div>
+      <div className="cartItem__price">{<PriceFormater price={price} />}</div>
     </div>
   );
 }

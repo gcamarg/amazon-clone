@@ -4,7 +4,7 @@ import CurrencyFormat from "react-currency-format";
 
 function PriceFormater({ price }) {
   return (
-    <div>
+    <strong>
       <CurrencyFormat
         decimalScale={2}
         value={price}
@@ -12,7 +12,7 @@ function PriceFormater({ price }) {
         thousandSeparator={true}
         prefix={"R$"}
       />
-    </div>
+    </strong>
   );
 }
 
